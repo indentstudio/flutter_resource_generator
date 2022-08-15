@@ -2,7 +2,9 @@
 
 Automatically generate the dart file for pubspec.yaml
 
-The purpose of this library is to help flutter developers automatically generate asset corresponding dart files to help developers release their hands from this meaningless job, and the open source community has a lot of the same functionality.
+The purpose of this library is to help flutter developers automatically generate asset corresponding dart files to help
+developers release their hands from this meaningless job, and the open source community has a lot of the same
+functionality.
 
 This library is based on dartlang's build library.
 
@@ -11,15 +13,15 @@ This library is based on dartlang's build library.
 [English](https://github.com/CaiJingLong/flutter_resource_generator)
 
 - [flutter_asset_generator](#flutter_asset_generator)
-  - [screenshot](#screenshot)
-  - [Usage](#usage)
-    - [use source](#use-source)
-    - [pub global](#pub-global)
-    - [Support options](#support-options)
-  - [File name](#file-name)
-  - [Config file](#config-file)
-    - [exclude and include rules](#exclude-and-include-rules)
-      - [Example](#example)
+    - [screenshot](#screenshot)
+    - [Usage](#usage)
+        - [use source](#use-source)
+        - [pub global](#pub-global)
+        - [Support options](#support-options)
+    - [File name](#file-name)
+    - [Config file](#config-file)
+        - [exclude and include rules](#exclude-and-include-rules)
+            - [Example](#example)
 
 ## screenshot
 
@@ -48,13 +50,13 @@ pub global activate flutter_asset_generator
 
 use:
 
-`resource_generator`
+`generate`
 or
-`resource_generator -s $flutter_project`
+`generate -s $flutter_project`
 
 ### Support options
 
-Use `$ resource_generator -h` or `$ resource_generator --help` see usage document.
+Use `$ generate -h` or `$ generate --help` see usage document.
 
 ```bash
 resource_generator -h
@@ -109,13 +111,20 @@ The specified path is `resource_generator.yaml` in the flutter project root dire
 
 The file is yaml format, every element is `glob` style.
 
-The name of the excluded file is under the `exclude` node, and the type is a string array. If no rule is included, it means no file is excluded.
+The name of the excluded file is under the `exclude` node, and the type is a string array. If no rule is included, it
+means no file is excluded.
 
-The `include` node is the name of the file that needs to be imported, and the type is a string array. If it does not contain any rules, all file are allowed.
+The `include` node is the name of the file that needs to be imported, and the type is a string array. If it does not
+contain any rules, all file are allowed.
 
 In terms of priority, exclude is higher than include, in other words:
 
 First import the file according to the include nodes, and then exclude the files.
+
+### replace rules
+
+The replace rule maps the keys as regex to string values. Use _ at the in the end of the key to enable casing after the
+value.
 
 #### Example
 
@@ -128,6 +137,11 @@ include:
   - "**/a*.png"
   - "**/b*"
   - "**/c*"
+  - "**/2*"
+
+replace:
+  "@": "At_"
+  "2": "Two_"
 ```
 
 ```sh

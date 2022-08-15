@@ -17,4 +17,4 @@ dependencies:
   recase: ^4.0.0
 
 executables:
-  resource_generator: resource_generator
+  generate: resource_generator
