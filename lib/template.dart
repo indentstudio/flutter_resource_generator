@@ -30,7 +30,7 @@ class $pascalCase {\n
 ''';
     }
     text +=
-        "static const String ${_formatFiledName(imagePath, options)} = '$relativePath';\n";
+        "String get ${_formatFiledName(imagePath, options)} => '$relativePath';\n";
     return text;
   }
 

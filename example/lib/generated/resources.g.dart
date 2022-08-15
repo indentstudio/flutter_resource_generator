@@ -14,30 +14,30 @@ class Images {
   const Images._();
 
   /// ![preview](file:///Users/balazs/codected/flutter_resource_generator/example/images/bluetoothoff.png)
-  static const String bluetoothoff = 'images/bluetoothoff.png';
+  String get bluetoothoff => 'images/bluetoothoff.png';
 
   /// ![preview](file:///Users/balazs/codected/flutter_resource_generator/example/images/2course@.png)
-  static const String twoCourseAt = 'images/2course@.png';
+  String get twoCourseAt => 'images/2course@.png';
 
   /// ![preview](file:///Users/balazs/codected/flutter_resource_generator/example/images/course.png)
-  static const String course = 'images/course.png';
+  String get course => 'images/course.png';
 
   /// ![preview](file:///Users/balazs/codected/flutter_resource_generator/example/images/audio.png)
-  static const String audio = 'images/audio.png';
+  String get audio => 'images/audio.png';
 
   /// ![preview](file:///Users/balazs/codected/flutter_resource_generator/example/images/child.png)
-  static const String child = 'images/child.png';
+  String get child => 'images/child.png';
 }
 
 class Assets {
   const Assets._();
 
   /// ![preview](file:///Users/balazs/codected/flutter_resource_generator/example/assets/bluetoothon.png)
-  static const String bluetoothon = 'assets/bluetoothon.png';
+  String get bluetoothon => 'assets/bluetoothon.png';
 
   /// ![preview](file:///Users/balazs/codected/flutter_resource_generator/example/assets/bluetoothon-fjdfj.png)
-  static const String bluetoothonFjdfj = 'assets/bluetoothon-fjdfj.png';
+  String get bluetoothonFjdfj => 'assets/bluetoothon-fjdfj.png';
 
   /// ![preview](file:///Users/balazs/codected/flutter_resource_generator/example/assets/camera.png)
-  static const String camera = 'assets/camera.png';
+  String get camera => 'assets/camera.png';
 }
