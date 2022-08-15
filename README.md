@@ -166,29 +166,32 @@ class Images {
   const Images._();
 
   /// ![preview](file://%2FUsers%2Fbalazs%2Fcodected%2Fflutter_resource_generator%2Fexample%2Fimages%2Fbluetoothoff.png)
-  static const String bluetoothoffPng = 'images/bluetoothoff.png';
+  static const String bluetoothoff = 'images/bluetoothoff.png';
+
+  /// ![preview](file://%2FUsers%2Fbalazs%2Fcodected%2Fflutter_resource_generator%2Fexample%2Fimages%2F2course%40.png)
+  static const String twoCourseAt = 'images/2course@.png';
 
   /// ![preview](file://%2FUsers%2Fbalazs%2Fcodected%2Fflutter_resource_generator%2Fexample%2Fimages%2Fcourse.png)
-  static const String coursePng = 'images/course.png';
+  static const String course = 'images/course.png';
 
   /// ![preview](file://%2FUsers%2Fbalazs%2Fcodected%2Fflutter_resource_generator%2Fexample%2Fimages%2Faudio.png)
-  static const String audioPng = 'images/audio.png';
+  static const String audio = 'images/audio.png';
 
   /// ![preview](file://%2FUsers%2Fbalazs%2Fcodected%2Fflutter_resource_generator%2Fexample%2Fimages%2Fchild.png)
-  static const String childPng = 'images/child.png';
+  static const String child = 'images/child.png';
 }
 
 class Assets {
   const Assets._();
 
   /// ![preview](file://%2FUsers%2Fbalazs%2Fcodected%2Fflutter_resource_generator%2Fexample%2Fassets%2Fbluetoothon.png)
-  static const String bluetoothonPng = 'assets/bluetoothon.png';
+  static const String bluetoothon = 'assets/bluetoothon.png';
 
   /// ![preview](file://%2FUsers%2Fbalazs%2Fcodected%2Fflutter_resource_generator%2Fexample%2Fassets%2Fbluetoothon-fjdfj.png)
-  static const String bluetoothonFjdfjPng = 'assets/bluetoothon-fjdfj.png';
+  static const String bluetoothonFjdfj = 'assets/bluetoothon-fjdfj.png';
 
   /// ![preview](file://%2FUsers%2Fbalazs%2Fcodected%2Fflutter_resource_generator%2Fexample%2Fassets%2Fcamera.png)
-  static const String cameraPng = 'assets/camera.png';
+  static const String camera = 'assets/camera.png';
 }
 ```
 

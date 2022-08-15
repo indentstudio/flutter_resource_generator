@@ -2,9 +2,9 @@ import 'dart:io';
 
 import 'package:path/path.dart';
 
-import 'filter.dart';
 import 'format.dart';
 import 'logger.dart';
+import 'options.dart';
 import 'parser.dart';
 import 'template.dart';
 
@@ -19,18 +19,18 @@ class ResourceDartBuilder {
     final File yamlFile = File('$projectRootPath/resource_generator.yaml');
     if (yamlFile.existsSync()) {
       final String text = yamlFile.readAsStringSync();
-      filter = Filter(text);
+      options = Options(text);
     }
   }
 
-  Filter? filter;
+  Options? options;
   bool isPreview = true;
 
   void generateResourceDartFile(String className) {
     print('$_generateLogPrefix for project: $projectRootPath');
     final String pubYamlPath = '$projectRootPath${separator}pubspec.yaml';
     final ResourceDartParser parser =
-        ResourceDartParser(projectRootPath, filter);
+        ResourceDartParser(projectRootPath, options);
     try {
       final List<FolderModel> model = parser.parse(pubYamlPath);
       _generateCode(className, model);
@@ -94,7 +94,8 @@ class ResourceDartBuilder {
       source.write(template.classDeclare(model.name));
       for (final String imagePath in model.imagePaths) {
         final String relativePath = relative(imagePath, from: projectRootPath);
-        source.write(template.imageAsset(imagePath, relativePath, isPreview));
+        source.write(
+            template.imageAsset(imagePath, relativePath, isPreview, options));
       }
       source.write(template.classDeclareFooter);
     }

@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:path/path.dart';
 import 'package:yaml/yaml.dart';
 
-import 'filter.dart';
+import 'options.dart';
 
 const List<String> platformExcludeFiles = <String>[
   // For MacOS
@@ -24,7 +24,7 @@ class ResourceDartParser {
   ResourceDartParser(this.projectRootPath, this.filter);
 
   final String projectRootPath;
-  final Filter? filter;
+  final Options? filter;
 
   /// Creates parsed model
   List<FolderModel> parse(String yamlPath) {

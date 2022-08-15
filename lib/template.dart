@@ -1,3 +1,4 @@
+import 'package:flutter_resource_generator/options.dart';
 import 'package:path/path.dart';
 import 'package:recase/recase.dart';
 
@@ -20,7 +21,8 @@ class $pascalCase {\n
 
   String get classDeclareFooter => '}\n';
 
-  String imageAsset(String imagePath, String relativePath, bool isPreview) {
+  String imageAsset(
+      String imagePath, String relativePath, bool isPreview, Options? options) {
     String text = '';
     if (isPreview) {
       text += '''
@@ -28,7 +30,7 @@ class $pascalCase {\n
 ''';
     }
     text +=
-        "static const String ${_formatFiledName(imagePath)} = '$relativePath';\n";
+        "static const String ${_formatFiledName(imagePath, options)} = '$relativePath';\n";
     return text;
   }
 
@@ -44,7 +46,9 @@ class $pascalCase {\n
     return Uri.encodeComponent(path);
   }
 
-  String _formatFiledName(String imagePath) {
-    return ReCase(split(imagePath).last.replaceAll('@', 'at')).camelCase;
+  String _formatFiledName(String imagePath, Options? options) {
+    final String fileName = split(imagePath).last.split('.')[0];
+    final String renamed = options?.rename(fileName) ?? fileName;
+    return ReCase(renamed).camelCase;
   }
 }
