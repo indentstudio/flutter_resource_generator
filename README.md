@@ -48,19 +48,16 @@ pub global activate flutter_asset_generator
 
 use:
 
-`fgen`
+`resource_generator`
 or
-`fgen -s $flutter_project`
+`resource_generator -s $flutter_project`
 
 ### Support options
 
-Use `$ fgen -h` or `$ fgen --help` see usage document.
+Use `$ resource_generator -h` or `$ resource_generator --help` see usage document.
 
 ```bash
-fgen -h
--w, --[no-]watch    Continue to monitor changes after execution of orders.
-                    (defaults to on)
-
+resource_generator -h
 -p, --[no-]preview  Generate file with preview comments.
                     (defaults to on)
 
@@ -106,7 +103,7 @@ Because the two field names will be exactly the same.
 
 The location of the configuration file is conventional.
 Configuration via commands is **not supported**.
-The specified path is `fgen.yaml` in the flutter project root directory.
+The specified path is `resource_generator.yaml` in the flutter project root directory.
 
 ### exclude and include rules
 
@@ -155,7 +152,7 @@ images
 ```dart
 /// Generate by [resource_generator](https://github.com/CaiJingLong/flutter_resource_generator) library.
 /// PLEASE DO NOT EDIT MANUALLY.
-class R {
+class Assets {
 
   /// ![preview](file:///Users/jinglongcai/code/dart/self/flutter_resource_generator/example/assets/bluetoothon-fjdfj.png)
   static const String ASSETS_BLUETOOTHON_FJDFJ_PNG = 'assets/bluetoothon-fjdfj.png';

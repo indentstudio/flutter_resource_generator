@@ -1,38 +1,35 @@
 import 'dart:io';
+
 import 'package:glob/glob.dart';
 import 'package:yaml/yaml.dart';
 
 class Filter {
-  Filter(String text) : map = loadYaml(text) as YamlMap?;
-
-  final YamlMap? map;
-
-  Iterable<String> filter(Iterable<String> pathList) {
-    final List<Glob> includeList = _loadList('include', true);
-    final List<Glob> excludeList = _loadList('exclude');
-
-    Iterable<String> tmp = pathList.where((String element) {
-      for (final Glob glob in includeList) {
-        if (glob.matches(element)) {
-          return true;
-        }
-      }
-      return false;
-    });
-
-    tmp = tmp.where((String element) {
-      for (final Glob glob in excludeList) {
-        if (glob.matches(element)) {
-          return false;
-        }
-      }
-      return true;
-    });
-
-    return tmp.toList();
+  Filter(String text) {
+    final YamlMap? map = loadYaml(text) as YamlMap?;
+    includeList = _loadList(map, 'include', true);
+    excludeList = _loadList(map, 'exclude');
   }
 
-  List<Glob> _loadList(String key, [bool emptyEqualsAll = false]) {
+  late final List<Glob> includeList;
+  late final List<Glob> excludeList;
+
+  bool isExcluded(String path) {
+    for (final Glob glob in includeList) {
+      if (!glob.matches(path)) {
+        return true;
+      }
+    }
+    for (final Glob glob in excludeList) {
+      if (glob.matches(path)) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+
+  List<Glob> _loadList(YamlMap? map, String key,
+      [bool emptyEqualsAll = false]) {
     try {
       final YamlList? list = map?[key] as YamlList?;
       if (emptyEqualsAll && (list == null || list.isEmpty)) {

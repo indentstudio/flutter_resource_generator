@@ -9,16 +9,10 @@ String get separator => path_library.separator;
 
 void main(List<String> args) {
   final ArgParser parser = ArgParser();
-  parser.addFlag(
-    'watch',
-    abbr: 'w',
-    defaultsTo: true,
-    help: 'Continue to monitor changes after execution of orders.',
-  );
   parser.addOption(
     'output',
     abbr: 'o',
-    defaultsTo: 'lib${separator}const${separator}resource.dart',
+    defaultsTo: 'lib${separator}generated${separator}resources.g.dart',
     help: 'Your resource file path. \n'
         "If it's a relative path, the relative flutter root directory",
   );
@@ -31,8 +25,8 @@ void main(List<String> args) {
   parser.addOption(
     'name',
     abbr: 'n',
-    defaultsTo: 'R',
-    help: 'The class name for the constant.',
+    defaultsTo: 'Resources',
+    help: 'The class name for the constants.',
   );
   parser.addFlag('help', abbr: 'h', help: 'Help usage', defaultsTo: false);
 
@@ -64,7 +58,6 @@ void main(List<String> args) {
     workPath,
     outputPath,
     className,
-    results['watch'] as bool,
     results['preview'] as bool,
   );
 }
@@ -73,12 +66,10 @@ void check(
   File workPath,
   String outputPath,
   String className,
-  bool isWatch,
   bool isPreview,
 ) {
   final ResourceDartBuilder builder =
       ResourceDartBuilder(workPath.absolute.path, outputPath);
-  builder.isWatch = isWatch;
   builder.isPreview = isPreview;
   builder.generateResourceDartFile(className);
 }
