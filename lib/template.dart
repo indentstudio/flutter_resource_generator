@@ -43,7 +43,7 @@ class $pascalCase {\n
   }
 
   String _formatPreviewName(String path) {
-    return Uri.encodeComponent(path);
+    return path.replaceAll(' ', '%20');
   }
 
   String _formatFiledName(String imagePath, Options? options) {
