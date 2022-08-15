@@ -77,9 +77,9 @@ class ResourceDartParser {
       recursive: false,
     );
     for (final FileSystemEntity entity in entries) {
-      if (platformExcludeFiles.contains(basename(entity.path))) {
-        continue;
-      } else if (filter?.isExcluded(entity.path) ?? false) {
+      if (!FileSystemEntity.isFileSync(entity.path) ||
+          platformExcludeFiles.contains(basename(entity.path)) ||
+          (filter?.isExcluded(entity.path) ?? false)) {
         continue;
       }
       images.add(entity.path);

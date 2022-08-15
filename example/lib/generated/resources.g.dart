@@ -13,14 +13,26 @@ class Resources {
 class Images {
   const Images._();
 
+  /// ![preview](file://%2FUsers%2Fbalazs%2Fcodected%2Fflutter_resource_generator%2Fexample%2Fimages%2Faddress%20space.png)
+  static const String addressSpacePng = 'images/address space.png';
+
+  /// ![preview](file://%2FUsers%2Fbalazs%2Fcodected%2Fflutter_resource_generator%2Fexample%2Fimages%2Faddress.png)
+  static const String addressPng = 'images/address.png';
+
   /// ![preview](file://%2FUsers%2Fbalazs%2Fcodected%2Fflutter_resource_generator%2Fexample%2Fimages%2Fbluetoothoff.png)
   static const String bluetoothoffPng = 'images/bluetoothoff.png';
+
+  /// ![preview](file://%2FUsers%2Fbalazs%2Fcodected%2Fflutter_resource_generator%2Fexample%2Fimages%2Fbluetooth_link.png)
+  static const String bluetoothLinkPng = 'images/bluetooth_link.png';
 
   /// ![preview](file://%2FUsers%2Fbalazs%2Fcodected%2Fflutter_resource_generator%2Fexample%2Fimages%2Fcourse.png)
   static const String coursePng = 'images/course.png';
 
   /// ![preview](file://%2FUsers%2Fbalazs%2Fcodected%2Fflutter_resource_generator%2Fexample%2Fimages%2Faudio.png)
   static const String audioPng = 'images/audio.png';
+
+  /// ![preview](file://%2FUsers%2Fbalazs%2Fcodected%2Fflutter_resource_generator%2Fexample%2Fimages%2Faddto.png)
+  static const String addtoPng = 'images/addto.png';
 
   /// ![preview](file://%2FUsers%2Fbalazs%2Fcodected%2Fflutter_resource_generator%2Fexample%2Fimages%2Fchild.png)
   static const String childPng = 'images/child.png';
@@ -31,6 +43,12 @@ class Assets {
 
   /// ![preview](file://%2FUsers%2Fbalazs%2Fcodected%2Fflutter_resource_generator%2Fexample%2Fassets%2Fbluetoothon.png)
   static const String bluetoothonPng = 'assets/bluetoothon.png';
+
+  /// ![preview](file://%2FUsers%2Fbalazs%2Fcodected%2Fflutter_resource_generator%2Fexample%2Fassets%2Faddress.png)
+  static const String addressPng = 'assets/address.png';
+
+  /// ![preview](file://%2FUsers%2Fbalazs%2Fcodected%2Fflutter_resource_generator%2Fexample%2Fassets%2Faddress%40at.png)
+  static const String addressatatPng = 'assets/address@at.png';
 
   /// ![preview](file://%2FUsers%2Fbalazs%2Fcodected%2Fflutter_resource_generator%2Fexample%2Fassets%2Fbluetoothon-fjdfj.png)
   static const String bluetoothonFjdfjPng = 'assets/bluetoothon-fjdfj.png';
