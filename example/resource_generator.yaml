@@ -8,6 +8,6 @@ include:
   - "**/c*"
   - "**/2*"
 
-replace:
+rename:
   "@": "At_"
   "2": "Two_"

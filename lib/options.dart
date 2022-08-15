@@ -8,7 +8,7 @@ class Options {
     final YamlMap? map = loadYaml(text) as YamlMap?;
     _includeList = _loadList(map, 'include', true);
     _excludeList = _loadList(map, 'exclude');
-    _renameList = _loadMap(map, 'replace');
+    _renameList = _loadMap(map, 'rename');
   }
 
   late final List<Glob> _includeList;
