@@ -1,8 +1,8 @@
 import 'dart:io';
 
 import 'package:args/args.dart';
-import 'package:flutter_asset_generator/builder.dart';
-import 'package:flutter_asset_generator/logger.dart';
+import 'package:flutter_resource_generator/builder.dart';
+import 'package:flutter_resource_generator/logger.dart';
 import 'package:path/path.dart' as path_library;
 
 String get separator => path_library.separator;
