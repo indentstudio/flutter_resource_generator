@@ -31,12 +31,11 @@ class ResourceDartParser {
     final List<FolderModel> retVal = <FolderModel>[];
     final List<String> assetPath = _getAssetPath(yamlPath);
     for (final String path in assetPath) {
-      if (filter?.isExcluded(path) ?? false) {
-        continue;
-      }
       final String file = _getAbsolutePath(path);
-      final FolderModel model = _convertToModel(file);
-      retVal.add(model);
+      final FolderModel? model = _convertToModel(file);
+      if (model != null) {
+        retVal.add(model);
+      }
     }
     return retVal;
   }
@@ -69,7 +68,7 @@ class ResourceDartParser {
     return join(projectRootPath, path);
   }
 
-  FolderModel _convertToModel(String filePath) {
+  FolderModel? _convertToModel(String filePath) {
     assert(FileSystemEntity.isDirectorySync(filePath));
     final String name = split(filePath).last;
     final List<String> images = <String>[];
@@ -80,8 +79,13 @@ class ResourceDartParser {
     for (final FileSystemEntity entity in entries) {
       if (platformExcludeFiles.contains(basename(entity.path))) {
         continue;
+      } else if (filter?.isExcluded(entity.path) ?? false) {
+        continue;
       }
       images.add(entity.path);
+    }
+    if (images.isEmpty) {
+      return null;
     }
     return FolderModel(name, images);
   }

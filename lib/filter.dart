@@ -14,17 +14,12 @@ class Filter {
   late final List<Glob> excludeList;
 
   bool isExcluded(String path) {
-    for (final Glob glob in includeList) {
-      if (!glob.matches(path)) {
-        return true;
-      }
+    if (includeList.every((Glob glob) => !glob.matches(path))) {
+      return true;
     }
-    for (final Glob glob in excludeList) {
-      if (glob.matches(path)) {
-        return true;
-      }
+    if (excludeList.any((Glob glob) => glob.matches(path))) {
+      return true;
     }
-
     return false;
   }
 
