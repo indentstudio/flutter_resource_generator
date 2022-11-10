@@ -68,7 +68,7 @@ class ResourceDartBuilder {
     if (File(outputPath).isAbsolute) {
       _resourceFile ??= File(outputPath);
     } else {
-      _resourceFile ??= File('$projectRootPath/$outputPath');
+      _resourceFile ??= File('$projectRootPath$separator$outputPath');
     }
 
     _resourceFile!.createSync(recursive: true);
