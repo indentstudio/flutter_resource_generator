@@ -29,8 +29,9 @@ class $pascalCase {\n
   /// ![preview](file://${_formatPreviewName(imagePath)})
 ''';
     }
-    text +=
-        "String get ${_formatFiledName(imagePath, options)} => '$relativePath';\n";
+    text += '''
+        String get ${_formatFiledName(imagePath, options)} => '$relativePath';\n
+      ''';
     return text;
   }
 
